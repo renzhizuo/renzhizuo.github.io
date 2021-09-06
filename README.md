@@ -52,3 +52,20 @@ mybatis:
   config-location: classpath:mybatis-config.xml
 ```
 
+### 建表sql
+
+```sql
+CREATE TABLE `x_demo` (
+`id` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+`tenant_id` VARCHAR (32) NOT NULL COMMENT 'x',
+`session_id` VARCHAR (64) DEFAULT NULL COMMENT 'x',
+`cellphone` VARCHAR (45) NOT NULL COMMENT 'x',
+`customer_name` VARCHAR (128) DEFAULT NULL COMMENT 'x',
+`create_time` datetime NOT NULL COMMENT 'x',
+`update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'x',
+`delete_time` datetime DEFAULT NULL COMMENT 'x',
+`is_deleted` TINYINT (1) NOT NULL DEFAULT '0' COMMENT '是否已删除(1-已删除；0-未删除)',
+PRIMARY KEY (`id`) USING BTREE
+) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COMMENT = 'x';
+```
+
